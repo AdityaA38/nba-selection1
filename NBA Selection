@@ -1,0 +1,76 @@
+//
+//  ContentView.swift
+//  NBARandomGenerator
+//
+//  Accessed by Aditya Akella on 4/9/23.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        let Teams1 = ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers" ,"Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"]
+        let Teams2 = ["Atlanta Hawks", "Boston Celtics", "Brooklyn Nets", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Dallas Mavericks", "Denver Nuggets", "Detroit Pistons", "Golden State Warriors", "Houston Rockets", "Indiana Pacers", "Los Angeles Clippers", "Los Angeles Lakers" ,"Memphis Grizzlies", "Miami Heat", "Milwaukee Bucks", "Minnesota Timberwolves", "New Orleans Pelicans", "New York Knicks", "Oklahoma City Thunder", "Orlando Magic", "Philadelphia 76ers", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Toronto Raptors", "Utah Jazz", "Washington Wizards"]
+        let randomName1 = Teams1.randomElement()!
+        let randomName2=Teams2.randomElement()!
+
+        
+        let TeamAScore1=Int.random(in: 1...150)
+        let teamBScore2=Int.random(in:1...150)
+   let score1=String(TeamAScore1)
+   let score2=String(teamBScore2)
+
+        Image("NBALogo")
+        HStack{
+            
+            Text(randomName1)
+                .font(.system(size: 30))
+            Text(score1)
+                .font(.system(size:25))
+           
+        }
+      Spacer()
+        .frame(height:20)
+        HStack{
+            
+            Text(randomName2)
+                .font(.system(size: 30))
+            Text(score2)
+                .font(.system(size:25))
+           
+        }
+        Spacer()
+            .frame(height:100)
+        
+        if(TeamAScore1>teamBScore2){
+            HStack{
+                Text("Winner:")
+                    .font(.system(size:25))
+                Text(randomName1)
+                    .font(.system(size: 30))
+                Text(score1)
+                    .font(.system(size:25))
+            }
+            
+        }else{
+            HStack{
+                Text("Winner:")
+                    .font(.system(size:20))
+                Text(randomName2)
+                    .font(.system(size: 20))
+                Text(score2)
+                    .font(.system(size:25))
+            }
+            
+        }
+        
+   
+    }
+    
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
